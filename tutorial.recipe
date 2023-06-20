@@ -1,0 +1,31 @@
+Bootstrap: docker
+
+From: ubuntu
+
+
+%help
+
+Build this image using singularity build tutorial.recipe
+
+%setup
+
+    # The commands here are executed in the **Host** OS. Can be used to create file that should be put in the container for example.
+
+%files
+
+    # here you can copy files from your host computer into the container.
+    tuto.F90 <...>
+
+%environment 
+
+    # here we can define some environment variables...
+
+%post
+
+    apt install build-essentials vim git 
+
+    git <...>
+
+    apt install <...>
+
+    
