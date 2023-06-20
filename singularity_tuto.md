@@ -60,3 +60,23 @@ Complete the copy to put the .F90 file in the /home/tuto directory of the contai
 * Now let's look at the %post section, this is where you will tell singularity the dependency you need. As said before, we want to use our container for a small fortran program, that we want to launch using openmpi. 
 
 * We now have a basic recipe. We can now try to build it and compile the fortran code inside (note that you could also compile the code using the recipe, but this way we'll explore the container)
+
+* To build the image : 
+    $ singularity build --notest tutorial.recipe
+
+  Once the image is build, we can "go inside" the container !
+
+III.2. Compiling inside the container
+-------------------------------------
+
+As said previously, the code compilation could be added to the recipe, but as an exercice, let's compile it manually by connecting to the container
+
+III.3. Submitting the job using slurm
+-------------------------------------
+
+* update the slurm script to point to the singularity container we just built. Update the slurm values to request the number of jobes you 
+
+* launch using sbatch 
+
+* check the status using sacct - if the job is pending, check when it is planned to be launched : squeue --start 
+
